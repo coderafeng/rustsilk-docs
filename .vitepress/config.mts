@@ -1,5 +1,6 @@
 import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
+import { getSidebar } from 'vitepress-plugin-auto-sidebar'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -42,38 +43,22 @@ export default defineConfig({
                 items: [
                     {
                         text: 'Java',
-                        items: [
-                            { text: 'Java入门到进阶', link: '/md/back-end/java/basic/Java基础/Java面向对象' },
-                            { text: 'JVM', link: '/md/back-end/java/jvm/JVM知识体系' },
-                            { text: 'Spring Framework', link: '/md/back-end/java/spring-framework/SpringFramework知识体系' },
-                            { text: 'Spring Boot', link: '/md/back-end/java/spring-boot/SpringBoot知识体系' }
-                        ]
+                        link: '/md/back-end/java/'
                     },
                     {
                         text: 'Rust',
-                        items: [
-                            { text: 'Rust入门到进阶', link: '/md/back-end/rust/basic/Rust基础/Rust知识体系' },
-                            { text: 'GUI - tauri', link: '/md/back-end/rust/gui/tauri' },
-                            { text: 'GUI - slint', link: '/md/back-end/rust/gui/slint' },
-                            { text: 'GUI - gpui', link: '/md/back-end/rust/gui/gpui' },
-                            { text: 'Web - axum', link: '/md/back-end/rust/web/axum' },
-                            { text: 'Web - actix-web', link: '/md/back-end/rust/web/actix-web' },
-                            { text: 'Web - summer-rs', link: '/md/back-end/rust/web/summer-rs' }
-                        ] },
+                        link: '/md/back-end/rust/'
+                    },
                     {
-                        text: 'Python入门到进阶',
-                        items: [
-                            { text: 'Python', link: '/md/back-end/python/Java基础' },
-                            { text: '爬虫', link: '/md/back-end/python/crawler' },
-                            { text: '自动化', link: '/md/back-end/python/automation' },
-                            { text: 'AI', link: '/md/back-end/python/ai' }
-                        ] }
+                        text: 'Python',
+                        link: '/md/back-end/python/'
+                    }
                 ]
             },
             {
-                text: '前端',
+                text: '前端开发',
                 items: [
-                    {text: "三剑客+TS", link: '/md/front-end/Java基础'},
+                    {text: "三剑客+TS", link: '/md/front-end/三剑客+TS'},
                     {text: "Vue3", link: '/md/front-end/vue3'},
                     {text: "React", link: '/md/front-end/react'},
                     {text: "uni-app", link: '/md/front-end/uni-app'},
@@ -170,7 +155,7 @@ export default defineConfig({
                     {text: "旅游", link: '/md/life/travel'},
                     {text: "摄影", link: '/md/life/photography'},
                     {text: "音乐", link: '/md/life/music'},
-                    {text: "影视", link: '/md/life/film-and-television'},
+                    {text: "影视", link: '/md/life/movie'},
                     {text: "DIY", link: '/md/life/diy'},
                     {text: "养生", link: '/md/life/health-preservation'},
                     {text: "其它", link: '/md/life/other'},
@@ -178,63 +163,43 @@ export default defineConfig({
             },
             {text: '关于', link: '/md/about'},
         ],
-        // sidebar: {
-        //     "/md/java/basic": set_sidebar("/md/java/basic"),
-        // },
-        sidebar: [
-            {
-                text: 'Java从入门到进阶',
-                items: [
-                    {
-                        text: "Java基础",
-                        items: [
-                            {text: "Java面向对象", link: '/md/back-end/java/basic/Java基础/Java面向对象'},
-                            {text: "Java知识体系", link: '/md/back-end/java/basic/Java基础/Java知识体系'},
-                            {text: "Java基础知识点", link: '/md/back-end/java/basic/Java基础/Java基础知识点'},
-                        ]
-                    },
-                    {
-                        text: "Java集合框架",
-                        items: [
-                            {text: "Collection类关系图", link: '/md/back-end/java/basic/Java集合框架/Collection类关系图'},
-                            {text: "Collection - ArrayList详解", link: '/md/back-end/java/basic/Java集合框架/Collection - ArrayList详解'},
-                            {text: "Collection - LinkedList详解", link: '/md/back-end/java/basic/Java集合框架/Collection - LinkedList详解'},
-                            {text: "Collection - Stack & Queue详解", link: '/md/back-end/java/basic/Java集合框架/Collection - Stack & Queue详解'},
-                            {text: "Collection - PriorityQueue详解", link: '/md/back-end/java/basic/Java集合框架/Collection - PriorityQueue详解'},
-                            {text: "Map - HashSet & HashMap详解", link: '/md/back-end/java/basic/Java集合框架/Map - HashSet & HashMap详解'},
-                            {text: "Map - LinkedHashSet & Map详解", link: '/md/back-end/java/basic/Java集合框架/Map - LinkedHashSet & Map详解'},
-                            {text: "Map - TreeSet & TreeMap详解", link: '/md/back-end/java/basic/Java集合框架/Map - TreeSet & TreeMap详解'},
-                            {text: "Map - WeakHashMap详解", link: '/md/back-end/java/basic/Java集合框架/Map - WeakHashMap详解'},
-                        ]
-                    },
-                ],
-            },
-            {
-                text: 'JVM',
-                items: [
-                    {text: "JVM知识体系", link: '/md/back-end/java/jvm/JVM知识体系'},
-                    {text: "JVM基础 - 类字节码详解", link: '/md/back-end/java/jvm/JVM基础 - 类字节码详解.md'},
-                ]
-            },
-            {
-                text: 'Spring Framework',
-                items: [
-                    {text: "SpringFramework知识体系", link: '/md/back-end/java/spring-framework/SpringFramework知识体系'},
-                ]
-            },
-            {
-                text: 'Spring Boot',
-                items: [
-                    {text: "SpringBoot知识体系", link: '/md/back-end/java/spring-boot/SpringBoot知识体系'},
-                ]
-            },
-            {
-                text: 'Rust入门到进阶',
-                items: [
-                    {text: "Rust知识体系", link: '/md/back-end/rust/basic/Rust基础/Rust知识体系'},
-                ]
-            },
-        ],
+        sidebar: {
+            // 后端开发
+            "/md/back-end/java/": set_sidebar("/md/back-end/java"),
+            "/md/back-end/rust/": set_sidebar("/md/back-end/rust"),
+            "/md/back-end/python/": set_sidebar("/md/back-end/python"),
+            // 前端开发
+            "/md/front-end/三剑客+TS/": set_sidebar("/md/front-end/三剑客+TS"),
+            "/md/front-end/vue3/": set_sidebar("/md/front-end/vue3"),
+            "/md/front-end/react/": set_sidebar("/md/front-end/react"),
+            "/md/front-end/uni-app/": set_sidebar("/md/front-end/uni-app"),
+            // 数据库与中间件
+            "/md/database/postgresql/": set_sidebar("/md/database/postgresql"),
+            "/md/database/mysql/": set_sidebar("/md/database/mysql"),
+            "/md/database/sqlite/": set_sidebar("/md/database/sqlite"),
+            "/md/database/h2/": set_sidebar("/md/database/h2"),
+            "/md/database/redis/": set_sidebar("/md/database/redis"),
+            "/md/database/elasticsearch/": set_sidebar("/md/database/elasticsearch"),
+            "/md/database/mongodb/": set_sidebar("/md/database/mongodb"),
+            "/md/mq/rabbitmq/": set_sidebar("/md/mq/rabbitmq"),
+            "/md/mq/kafka/": set_sidebar("/md/mq/kafka"),
+            "/md/mq/rocketmq/": set_sidebar("/md/mq/rocketmq"),
+            "/md/middleware/mycat/": set_sidebar("/md/middleware/mycat"),
+            "/md/middleware/shardingsphere/": set_sidebar("/md/middleware/shardingsphere"),
+            "/md/storage/minio/": set_sidebar("/md/storage/minio"),
+            "/md/storage/rustfs/": set_sidebar("/md/storage/rustfs"),
+            // 架构与工程
+            "/md/core/rustfs/": set_sidebar("/md/core/rustfs"),
+            // 生活
+            "/md/life/gourmet-food/": set_sidebar("/md/life/gourmet-food"),
+            "/md/life/travel": set_sidebar("/md/life/travel"),
+            "/md/life/photography/": set_sidebar("/md/life/photography"),
+            "/md/life/music/": set_sidebar("/md/life/music"),
+            "/md/life/movie/": set_sidebar("/md/life/movie"),
+            "/md/life/diy/": set_sidebar("/md/life/diy"),
+            "/md/life/health-preservation/": set_sidebar("/md/life/health-preservation"),
+            "/md/life/other/": set_sidebar("/md/life/other"),
+        },
         socialLinks: [
             {icon: 'github', link: 'https://github.com/coderafeng/rustsilk-docs'},
             {

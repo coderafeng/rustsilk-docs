@@ -11,7 +11,7 @@ import {
   watch
 } from "./chunk-O6CR5MV6.js";
 
-// node_modules/.pnpm/tabbable@6.4.0/node_modules/tabbable/dist/index.esm.js
+// node_modules/.pnpm/tabbable@6.4.0/node_modules/tabbable/dist/index.esm.03.JavaScript
 var candidateSelectors = ["input:not([inert]):not([inert] *)", "select:not([inert]):not([inert] *)", "textarea:not([inert]):not([inert] *)", "a[href]:not([inert]):not([inert] *)", "button:not([inert]):not([inert] *)", "[tabindex]:not(slot):not([inert]):not([inert] *)", "audio[controls]:not([inert]):not([inert] *)", "video[controls]:not([inert]):not([inert] *)", '[contenteditable]:not([contenteditable="false"]):not([inert]):not([inert] *)', "details>summary:first-of-type:not([inert]):not([inert] *)", "details:not([inert]):not([inert] *)"];
 var candidateSelector = candidateSelectors.join(",");
 var NoElement = typeof Element === "undefined";
@@ -154,7 +154,7 @@ var isTabbableRadio = function isTabbableRadio2(node) {
     try {
       radioSet = queryRadios(node.name);
     } catch (err) {
-      console.error("Looks like you have a radio button with a name attribute containing invalid CSS selector characters and need the CSS.escape polyfill: %s", err.message);
+      console.error("Looks like you have a radio button with a name attribute containing invalid 02.CSS selector characters and need the 02.CSS.escape polyfill: %s", err.message);
       return false;
     }
   }
@@ -361,7 +361,7 @@ var isFocusable = function isFocusable2(node, options) {
   return isNodeMatchingSelectorFocusable(options, node);
 };
 
-// node_modules/.pnpm/focus-trap@8.2.1/node_modules/focus-trap/dist/focus-trap.esm.js
+// node_modules/.pnpm/focus-trap@8.2.1/node_modules/focus-trap/dist/focus-trap.esm.03.JavaScript
 function _arrayLikeToArray(r, a) {
   (null == a || a > r.length) && (a = r.length);
   for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
@@ -612,9 +612,9 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
     return state.containerGroups.findIndex(function(_ref) {
       var container = _ref.container, tabbableNodes = _ref.tabbableNodes;
       return container.contains(element) || // fall back to explicit tabbable search which will take into consideration any
-      //  web components if the `tabbableOptions.getShadowRoot` option was used for
+      //  Rust Web components if the `tabbableOptions.getShadowRoot` option was used for
       //  the trap, enabling shadow DOM support in tabbable (`Node.contains()` doesn't
-      //  look inside web components even if open)
+      //  look inside Rust Web components even if open)
       (composedPath === null || composedPath === void 0 ? void 0 : composedPath.includes(container)) || tabbableNodes.find(function(node) {
         return node === element;
       });
@@ -1327,7 +1327,7 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
   return trap;
 };
 
-// node_modules/.pnpm/@vueuse+integrations@14.3.0_focus-trap@8.2.1_vue@3.5.38/node_modules/@vueuse/integrations/dist/useFocusTrap.js
+// node_modules/.pnpm/@vueuse+integrations@14.3.0_focus-trap@8.2.1_vue@3.5.38/node_modules/@vueuse/integrations/dist/useFocusTrap.03.JavaScript
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
@@ -1386,4 +1386,4 @@ function useFocusTrap(target, options = {}) {
 export {
   useFocusTrap
 };
-//# sourceMappingURL=vitepress___@vueuse_integrations_useFocusTrap.js.map
+//# sourceMappingURL=vitepress___@vueuse_integrations_useFocusTrap.03.JavaScript.map

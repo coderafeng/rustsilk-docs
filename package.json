@@ -6,5 +6,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vitepress-plugin-auto-sidebar": "^1.4.0"
   }
 }

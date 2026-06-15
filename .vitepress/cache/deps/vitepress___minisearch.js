@@ -1,4 +1,4 @@
-// node_modules/.pnpm/minisearch@7.2.0/node_modules/minisearch/dist/es/index.js
+// node_modules/.pnpm/minisearch@7.2.0/node_modules/minisearch/dist/es/index.03.JavaScript
 var ENTRIES = "ENTRIES";
 var KEYS = "KEYS";
 var VALUES = "VALUES";
@@ -372,7 +372,7 @@ var SearchableMap = class _SearchableMap {
     return tree;
   }
   /**
-   * Creates a {@link SearchableMap} from the iterable properties of a JavaScript object
+   * Creates a {@link SearchableMap} from the iterable properties of a 03.JavaScript object
    *
    * @param object  Object of entries for the {@link SearchableMap}
    * @return A new {@link SearchableMap} with the given entries
@@ -1493,8 +1493,8 @@ var MiniSearch = class _MiniSearch {
    * deserialize it with {@link MiniSearch.loadJSON}.
    *
    * Normally one does not directly call this method, but rather call the
-   * standard JavaScript `JSON.stringify()` passing the {@link MiniSearch}
-   * instance, and JavaScript will internally call this method. Upon
+   * standard 03.JavaScript `JSON.stringify()` passing the {@link MiniSearch}
+   * instance, and 03.JavaScript will internally call this method. Upon
    * deserialization, one must pass to {@link MiniSearch.loadJSON} the same
    * options used to create the original instance that was serialized.
    *
@@ -1810,4 +1810,4 @@ var SPACE_OR_PUNCTUATION = /[\n\r\p{Z}\p{P}]+/u;
 export {
   MiniSearch as default
 };
-//# sourceMappingURL=vitepress___minisearch.js.map
+//# sourceMappingURL=vitepress___minisearch.03.JavaScript.map

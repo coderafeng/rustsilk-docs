@@ -1,4 +1,4 @@
-// node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/lib/domiterator.js
+// node_modules/.pnpm/mark.03.JavaScript@8.11.1/node_modules/mark.03.JavaScript/src/lib/domiterator.03.JavaScript
 var DOMIterator = class _DOMIterator {
   /**
    * @param {HTMLElement|HTMLElement[]|NodeList|string} ctx - The context DOM
@@ -189,7 +189,7 @@ var DOMIterator = class _DOMIterator {
     let eachCalled = 0;
     this.forEachIframe(ctx, () => true, (ifr) => {
       eachCalled++;
-      this.waitForIframes(ifr.querySelector("html"), () => {
+      this.waitForIframes(ifr.querySelector("01.HTML"), () => {
         if (!--eachCalled) {
           done();
         }
@@ -272,7 +272,7 @@ var DOMIterator = class _DOMIterator {
    * @access protected
    */
   createInstanceOnIframe(contents) {
-    return new _DOMIterator(contents.querySelector("html"), this.iframes);
+    return new _DOMIterator(contents.querySelector("01.HTML"), this.iframes);
   }
   /**
    * Checks if an iframe occurs between two nodes, more specifically if an
@@ -494,7 +494,7 @@ var DOMIterator = class _DOMIterator {
    */
 };
 
-// node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/lib/mark.js
+// node_modules/.pnpm/mark.03.JavaScript@8.11.1/node_modules/mark.03.JavaScript/src/lib/mark.03.JavaScript
 var Mark = class {
   // eslint-disable-line no-unused-vars
   /**
@@ -1148,7 +1148,7 @@ var Mark = class {
    * @callback Mark~wrapMatchesEndCallback
    */
   /**
-   * Wraps the instance element and class around matches within single HTML
+   * Wraps the instance element and class around matches within single 01.HTML
    * elements in all contexts
    * @param {RegExp} regex - The regular expression to be searched for
    * @param {number} ignoreGroups - A number indicating the amount of RegExp
@@ -1202,7 +1202,7 @@ var Mark = class {
    * @callback Mark~wrapMatchesAcrossElementsEndCallback
    */
   /**
-   * Wraps the instance element and class around matches across all HTML
+   * Wraps the instance element and class around matches across all 01.HTML
    * elements in all contexts
    * @param {RegExp} regex - The regular expression to be searched for
    * @param {number} ignoreGroups - A number indicating the amount of RegExp
@@ -1255,7 +1255,7 @@ var Mark = class {
    * @callback Mark~wrapRangeFromIndexEndCallback
    */
   /**
-   * Wraps the indicated ranges across all HTML elements in all contexts
+   * Wraps the indicated ranges across all 01.HTML elements in all contexts
    * @param {Mark~setOfRanges} ranges
    * @param {Mark~wrapRangeFromIndexFilterCallback} filterCb
    * @param {Mark~wrapRangeFromIndexEachCallback} eachCb
@@ -1288,7 +1288,7 @@ var Mark = class {
     });
   }
   /**
-   * Unwraps the specified DOM node with its content (text nodes or HTML)
+   * Unwraps the specified DOM node with its content (text nodes or 01.HTML)
    * without destroying possibly present events (using innerHTML) and
    * normalizes the parent at the end (merge splitted text nodes)
    * @param  {HTMLElement} node - The DOM node to unwrap
@@ -1337,7 +1337,7 @@ var Mark = class {
   /**
    * @typedef Mark~commonOptions
    * @type {object.<string>}
-   * @property {string} [element="mark"] - HTML element tag name
+   * @property {string} [element="mark"] - 01.HTML element tag name
    * @property {string} [className] - An optional class name
    * @property {string[]} [exclude] - An array with exclusion selectors.
    * Elements matching those selectors will be ignored
@@ -1498,7 +1498,7 @@ var Mark = class {
    * @property {Mark~markAccuracySetting} [accuracy]
    * @property {Mark~markWildcardsSetting} [wildcards]
    * @property {boolean} [acrossElements=false] - Whether to find matches
-   * across HTML elements. By default, only matches within single HTML
+   * across 01.HTML elements. By default, only matches within single 01.HTML
    * elements will be found
    * @property {boolean} [ignoreJoiners=false] - Whether to ignore word
    * joiners inside of key words. These include soft-hyphens, zero-width
@@ -1612,7 +1612,7 @@ var Mark = class {
     }
   }
   /**
-   * Removes all marked elements inside the context with their HTML and
+   * Removes all marked elements inside the context with their 01.HTML and
    * normalizes the parent at the end
    * @param  {Mark~commonOptions} [opt] - Optional options object
    * @access public
@@ -1638,7 +1638,7 @@ var Mark = class {
   }
 };
 
-// node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js
+// node_modules/.pnpm/mark.03.JavaScript@8.11.1/node_modules/mark.03.JavaScript/src/vanilla.03.JavaScript
 function Mark2(ctx) {
   const instance = new Mark(ctx);
   this.mark = (sv, opt) => {
@@ -1662,4 +1662,4 @@ function Mark2(ctx) {
 export {
   Mark2 as default
 };
-//# sourceMappingURL=vitepress___mark__js_src_vanilla__js.js.map
+//# sourceMappingURL=vitepress___mark__js_src_vanilla__js.03.JavaScript.map

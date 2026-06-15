@@ -1,70 +1,113 @@
 import path from "node:path";
 import fs from "node:fs";
 
-// 文件根目录
 const DIR_PATH = path.resolve();
-// 白名单,过滤不是文章的文件和文件夹
 const WHITE_LIST = [
-    "深入理解Java虚拟机.md",
     ".vitepress",
     "node_modules",
     ".idea",
     "assets",
 ];
 
-// 判断是否是文件夹
 const isDirectory = (path) => fs.lstatSync(path).isDirectory();
-
-// 取差值
 const intersections = (arr1, arr2) =>
     Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));
 
-// 把方法导出直接使用
+// 提取数字前缀
+const getOrderFromName = (name, isIndex = false) => {
+    // index 文件优先级最高，排在第一位
+    if (isIndex) return 0;
+    const match = name.match(/^(\d+)\./);
+    return match ? parseInt(match[1]) : 999999;
+};
+
+// 清理名称中的数字前缀
+const cleanName = (name, isIndex = false) => {
+    if (isIndex) {
+        // index.md 显示为自定义名称
+        return "📖 概览";
+    }
+    return name.replace(/^\d+\./, "").replace(/\.md$/, "");
+};
+
+// 判断是否是 index.md
+const isIndexFile = (filename) => {
+    return filename === "index.md" || filename === "index";
+};
+
+// 排序函数
+function sortSidebarItems(items) {
+    if (!items || !items.length) return items;
+    
+    // 处理所有项，保存排序信息
+    items.forEach(item => {
+        const isIndex = item._isIndex || false;
+        item._order = getOrderFromName(item.text, isIndex);
+        item.text = cleanName(item.text, isIndex);
+        if (item.items) {
+            item.items = sortSidebarItems(item.items);
+        }
+    });
+    
+    // 按 _order 排序
+    items.sort((a, b) => a._order - b._order);
+    
+    // 删除临时字段
+    items.forEach(item => {
+        delete item._order;
+        delete item._isIndex;
+    });
+    
+    return items;
+}
+
 function getList(params, path1, pathname) {
-    // 存放结果
     const res = [];
-    // 开始遍历params
+    
     for (let file in params) {
-        // 拼接目录
         const dir = path.join(path1, params[file]);
-        // 判断是否是文件夹
         const isDir = isDirectory(dir);
+        
         if (isDir) {
-            // 如果是文件夹,读取之后作为下一次递归参数
+            // 读取文件夹内的内容
             const files = fs.readdirSync(dir);
+            const filteredFiles = intersections(files, WHITE_LIST);
+            
+            // 检查文件夹内是否有 index.md
+            const hasIndex = filteredFiles.some(f => isIndexFile(f));
+            
             res.push({
                 text: params[file],
                 collapsible: true,
-                items: getList(files, dir, `${pathname}/${params[file]}`),
+                items: getList(filteredFiles, dir, `${pathname}/${params[file]}`),
+                _hasIndex: hasIndex,
             });
         } else {
-            // 获取名字
             const name = path.basename(params[file]);
-            // 排除非 md 文件
             const suffix = path.extname(params[file]);
-            if (suffix !== ".md") {
-                continue;
-            }
+            if (suffix !== ".md") continue;
+            
+            const isIndex = isIndexFile(name);
+            
             res.push({
                 text: name,
                 link: `${pathname}/${name}`,
+                _isIndex: isIndex,
             });
         }
     }
-    // 对name做一下处理，把后缀删除
-    res.map((item) => {
-        item.text = item.text.replace(/\.md$/, "");
-    });
-    return res;
+    
+    return sortSidebarItems(res);
 }
 
 export const set_sidebar = (pathname) => {
-    // 获取pathname的路径
     const dirPath = path.join(DIR_PATH, pathname);
-    // 读取pathname下的所有文件或者文件夹
+    if (!fs.existsSync(dirPath)) {
+        console.warn(`目录不存在: ${dirPath}`);
+        return [];
+    }
+    
     const files = fs.readdirSync(dirPath);
-    // 过滤掉
     const items = intersections(files, WHITE_LIST);
-    // getList 函数后面会讲到
     return getList(items, dirPath, pathname);
 };
