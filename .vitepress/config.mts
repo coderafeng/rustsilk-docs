@@ -8,6 +8,8 @@ export default defineConfig({
     head: [["link", { rel: "icon", href: "/logo.svg" }]],
     title: "Rustsilk文档",
     description: "A VitePress Site",
+    // 域名，github仓库名
+    base: "/rustsilk-docs",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: "/logo.svg",
