@@ -1,6 +1,7 @@
 import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
 import { getSidebar } from 'vitepress-plugin-auto-sidebar'
+import  {  withMermaid  } from "vitepress-plugin-mermaid" ;
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

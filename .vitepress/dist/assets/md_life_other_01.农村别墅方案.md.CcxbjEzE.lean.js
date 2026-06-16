@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as r}from"./chunks/framework.C5lS51Lu.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"md/life/other/01.农村别墅方案.md","filePath":"md/life/other/01.农村别墅方案.md"}'),a={name:"md/life/other/01.农村别墅方案.md"};function o(_,s,c,n,d,i){return t(),r("div")}const p=e(a,[["render",o]]);export{f as __pageData,p as default};
