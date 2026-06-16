@@ -145,12 +145,17 @@ export default defineConfig({
                             { text: '分布式与微服务', link: '/md/architecture/distributed-microservice' },
                             { text: '业务系统设计', link: '/md/architecture/business-design' }
                         ]
+                    },
+                    {
+                        text: '团队管理',
+                        link: '/md/manage'
                     }
                 ]
             },
             {
                 text: '生活',
                 items: [
+                    {text: "财经", link: '/md/life/finance'},
                     {text: "美食", link: '/md/life/gourmet-food'},
                     {text: "旅游", link: '/md/life/travel'},
                     {text: "摄影", link: '/md/life/photography'},
@@ -189,8 +194,24 @@ export default defineConfig({
             "/md/storage/minio/": set_sidebar("/md/storage/minio"),
             "/md/storage/rustfs/": set_sidebar("/md/storage/rustfs"),
             // 架构与工程
-            "/md/core/rustfs/": set_sidebar("/md/core/rustfs"),
+            "/md/core/dsa/": set_sidebar("/md/core/dsa"),
+            "/md/core/design-patterns/": set_sidebar("/md/core/design-patterns"),
+            "/md/tools/git/": set_sidebar("/md/tools/git"),
+            "/md/tools/linux/": set_sidebar("/md/tools/linux"),
+            "/md/tools/nginx/": set_sidebar("/md/tools/nginx"),
+            "/md/tools/docker/": set_sidebar("/md/tools/docker"),
+            "/md/tools/k8s/": set_sidebar("/md/tools/k8s"),
+            "/md/tools/git-platform/": set_sidebar("/md/tools/git-platform"),
+            "/md/tools/jpom/": set_sidebar("/md/tools/jpom"),
+            "/md/engineering/process/": set_sidebar("/md/engineering/process"),
+            "/md/engineering/open-source-license/": set_sidebar("/md/engineering/open-source-license"),
+            "/md/engineering/theory/": set_sidebar("/md/engineering/theory"),
+            "/md/architecture/patterns/": set_sidebar("/md/architecture/patterns"),
+            "/md/architecture/distributed-microservice/": set_sidebar("/md/architecture/distributed-microservice"),
+            "/md/architecture/business-design/": set_sidebar("/md/architecture/business-design"),
+            "/md/manage/": set_sidebar("/md/manage"),
             // 生活
+            "/md/life/finance/": set_sidebar("/md/life/finance"),
             "/md/life/gourmet-food/": set_sidebar("/md/life/gourmet-food"),
             "/md/life/travel": set_sidebar("/md/life/travel"),
             "/md/life/photography/": set_sidebar("/md/life/photography"),
