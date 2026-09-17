@@ -2,6 +2,7 @@ import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
 import { getSidebar } from 'vitepress-plugin-auto-sidebar'
 import  {  withMermaid  } from "vitepress-plugin-mermaid" ;
+// import { generateBreadcrumbsData } from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -10,9 +11,17 @@ export default defineConfig({
     description: "A VitePress Site",
     // 域名，github仓库名
     base: "/rustsilk-docs",
+    // 面包屑导航
+    /*transformPageData(pageData, context) {
+        generateBreadcrumbsData(pageData, context)
+    },*/
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: "/logo.svg",
+        outline: {
+            level: [1, 3],
+            label: '本页大纲'
+        },
         search: {
             provider: "local",
             "options": {
@@ -42,7 +51,7 @@ export default defineConfig({
         nav: [
             {text: 'Home', link: '/'},
             {
-                text: '后端开发',
+                text: '后端',
                 items: [
                     {
                         text: 'Java',
@@ -55,15 +64,18 @@ export default defineConfig({
                     {
                         text: 'Python',
                         link: '/md/back-end/python/'
+                    },
+                    {
+                        text: 'Kotlin',
+                        link: '/md/back-end/kotlin/'
                     }
                 ]
             },
             {
-                text: '前端开发',
+                text: '前端',
                 items: [
                     {text: "三剑客+TS", link: '/md/front-end/三剑客+TS'},
                     {text: "Vue3", link: '/md/front-end/vue3'},
-                    {text: "React", link: '/md/front-end/react'},
                     {text: "uni-app", link: '/md/front-end/uni-app'},
                 ]
             },
@@ -176,10 +188,10 @@ export default defineConfig({
             "/md/back-end/java/": set_sidebar("/md/back-end/java"),
             "/md/back-end/rust/": set_sidebar("/md/back-end/rust"),
             "/md/back-end/python/": set_sidebar("/md/back-end/python"),
+            "/md/back-end/kotlin/": set_sidebar("/md/back-end/kotlin"),
             // 前端开发
             "/md/front-end/三剑客+TS/": set_sidebar("/md/front-end/三剑客+TS"),
             "/md/front-end/vue3/": set_sidebar("/md/front-end/vue3"),
-            "/md/front-end/react/": set_sidebar("/md/front-end/react"),
             "/md/front-end/uni-app/": set_sidebar("/md/front-end/uni-app"),
             // 数据库与中间件
             "/md/database/postgresql/": set_sidebar("/md/database/postgresql"),

@@ -1,20 +1,36 @@
-.vp-doc {
-    padding: 0 48px !important; /* 根据需要调整左右边距 */
-}
-
 :root {
-    /* 修改主内容区的最大宽度 */
-    --vp-layout-max-width: 1440px;
+    /* 调整整个布局（页面）的最大宽度，包含侧边栏和内容区，默认是 1440px */
+    --vp-layout-max-width: 1600px;
+    /* 左侧导航宽度，默认 240px */
+    --vp-sidebar-width: 290px;
 }
 
-/* 调整大屏下的左右边距（默认通常是 32px） */
-@media (min-width: 1440px) {
-    .VPLayout {
-        --vp-screen-max-width: 1440px;
-        padding: 0 40px !important;
-    }
+/* 防抖动：始终预留滚动条空间 */
+html {
+    scrollbar-gutter: stable;
+    overflow-y: auto;
 }
 
-.VPNavBar .content-container {
-    padding: 0 32px !important;
+/* 自定义WebKit浏览器的滚动条 */
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(73, 177, 245, 0.2);
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #49b1f5;
+    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent);
+    border-radius: 2em;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* 为Firefox自定义滚动条 */
+* {
+    scrollbar-width: thin; /* 适用于Firefox */
+    scrollbar-color: #49b1f5 rgba(73, 177, 245, 0.2); /* 适用于Firefox */
 }
