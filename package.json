@@ -2,8 +2,7 @@
   "devDependencies": {
     "@nolebase/vitepress-plugin-breadcrumbs": "^2.18.2",
     "mermaid": "^12.0.0",
-    "vitepress": "2.0.0-alpha.20",
-    "vitepress-mermaid-plugin": "^3.0.0"
+    "vitepress": "2.0.0-alpha.20"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
@@ -11,6 +10,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "vitepress-mermaid-renderer": "^1.2.2",
     "vitepress-plugin-auto-sidebar": "^1.4.0"
   }
 }
