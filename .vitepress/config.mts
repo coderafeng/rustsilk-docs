@@ -1,7 +1,7 @@
 import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
 import { getSidebar } from 'vitepress-plugin-auto-sidebar'
-import  {  withMermaid  } from "vitepress-plugin-mermaid" ;
+import  {  withMermaid  } from "vitepress-mermaid-plugin" ;
 // import { generateBreadcrumbsData } from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -11,6 +11,9 @@ export default defineConfig({
     description: "A VitePress Site",
     // 域名，github仓库名
     base: "/rustsilk-docs",
+    mermaid: {
+        // Mermaid 配置项，theme 在此处设置仅对亮色模式生效，深色模式会自动切换
+    },
     // 面包屑导航
     /*transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context)
