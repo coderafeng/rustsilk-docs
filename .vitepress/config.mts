@@ -14,16 +14,26 @@ export default defineConfig({
     /*transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context)
     },*/
+    markdown: {
+        lineNumbers: true, // 代码块全局显示行号
+        math: true, // LaTeX 数学公式
+        image: true, // 图片懒加载
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: "/logo.svg",
         outline: {
-            level: [1, 3],
+            level: [1, 4],
             label: '本页大纲'
         },
+        docFooter: {
+            prev: '上一页',
+            next: '下一页',
+        },
         search: {
-            provider: "local",
+            provider: "local", // 本地搜索
             "options": {
+                // 中文文本
                 translations: {
                     button: {
                         buttonText: "搜索文档",
@@ -46,6 +56,24 @@ export default defineConfig({
                     }
                 }
             },
+        },
+        // 基于 Git 提交记录显示页面最后更新时间
+        lastUpdated: {
+            text: '最后更新于',
+            formatOptions: {
+                dateStyle: 'short',
+                timeStyle: 'medium',
+            },
+        },
+        // 404 页面提示
+        notFound: {
+            title: '页面未找到',
+            quote: '你来到了未知领域，不如返回首页？',
+            linkLabel: '返回首页',
+            linkText: '带我回去',
+        },
+        sitemap: {
+            hostname: 'https://coderafeng.github.io/rustsilk-docs'
         },
         nav: [
             {text: 'Home', link: '/'},

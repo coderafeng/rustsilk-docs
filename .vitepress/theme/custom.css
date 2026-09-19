@@ -34,3 +34,15 @@ html {
     scrollbar-width: thin; /* 适用于Firefox */
     scrollbar-color: #49b1f5 rgba(73, 177, 245, 0.2); /* 适用于Firefox */
 }
+
+/* 1. 重置带行号代码块的外层左内边距 */
+.vp-doc div[class*='language-'] code {
+    padding: 0 2rem !important;
+}
+
+/* 2. 重新定义行号区域的宽度和样式 */
+.vp-doc .line-numbers-wrapper {
+    width: 3.5rem; /* 行号区域的宽度，可根据需要调整 */
+    padding-left: 0rem; /* 行号文字与左边的距离 */
+    border-right: 1px solid var(--vp-code-block-divider-color); /* 可选：保留分割线 */
+}
