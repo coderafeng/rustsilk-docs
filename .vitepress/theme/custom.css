@@ -46,3 +46,14 @@ html {
     padding-left: 0rem; /* 行号文字与左边的距离 */
     border-right: 1px solid var(--vp-code-block-divider-color); /* 可选：保留分割线 */
 }
+
+/* 给行号列加一个不透明背景和更高的 z-index，让它真正遮住底下滚过来的代码。 */
+.vp-doc div[class*='language-'].line-numbers-mode .line-numbers-wrapper {
+    background-color: var(--vp-code-block-bg); /* 与代码块背景色一致，形成遮挡 */
+    z-index: 3;                                /* 确保浮在代码上方 */
+}
+
+/* 让分割线在背景之上更清晰 */
+.vp-doc div[class*='language-'].line-numbers-mode .line-numbers-wrapper {
+    border-right: 1px solid var(--vp-code-block-divider-color);
+}
