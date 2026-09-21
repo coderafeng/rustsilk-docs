@@ -72,9 +72,9 @@ export default defineConfig({
             linkLabel: '返回首页',
             linkText: '带我回去',
         },
-        sitemap: {
-            hostname: 'https://coderafeng.github.io/rustsilk-docs'
-        },
+        // sitemap: {
+        //     hostname: 'https://coderafeng.github.io/rustsilk-docs'
+        // },
         nav: [
             {text: 'Home', link: '/'},
             {
@@ -101,7 +101,7 @@ export default defineConfig({
             {
                 text: '前端',
                 items: [
-                    {text: "三剑客+TS", link: '/md/front-end/三剑客+TS'},
+                    {text: "html_css_js_ts", link: '/md/front-end/html_css_js_ts'},
                     {text: "Vue3", link: '/md/front-end/vue3'},
                     {text: "uni-app", link: '/md/front-end/uni-app'},
                 ]
@@ -110,10 +110,9 @@ export default defineConfig({
                 text: '数据库与中间件',
                 items: [
                     {
-                        text: '关系型数据库',
+                        text: 'RDBMS',
                         items: [
                             { text: 'PostgreSQL', link: '/md/database/postgresql' },
-                            { text: 'MySQL', link: '/md/database/mysql' },
                             { text: 'SQLite', link: '/md/database/sqlite' },
                             { text: 'H2', link: '/md/database/h2' }
                         ]
@@ -137,14 +136,12 @@ export default defineConfig({
                     {
                         text: '分库分表',
                         items: [
-                            { text: 'Mycat', link: '/md/middleware/mycat' },
-                            { text: 'Apache ShardingSphere', link: '/md/middleware/shardingsphere' }
+                            { text: 'Apache ShardingSphere', link: '/md/middleware/ShardingSphere' }
                         ]
                     },
                     {
                         text: '文件存储 / 对象存储',
                         items: [
-                            { text: 'MinIO', link: '/md/storage/minio' },
                             { text: 'RustFS', link: '/md/storage/rustfs' },
                         ]
                     }
@@ -217,12 +214,11 @@ export default defineConfig({
             "/md/back-end/python/": set_sidebar("/md/back-end/python"),
             "/md/back-end/kotlin/": set_sidebar("/md/back-end/kotlin"),
             // 前端开发
-            "/md/front-end/三剑客+TS/": set_sidebar("/md/front-end/三剑客+TS"),
+            "/md/front-end/html_css_js_ts/": set_sidebar("/md/front-end/html_css_js_ts"),
             "/md/front-end/vue3/": set_sidebar("/md/front-end/vue3"),
             "/md/front-end/uni-app/": set_sidebar("/md/front-end/uni-app"),
             // 数据库与中间件
             "/md/database/postgresql/": set_sidebar("/md/database/postgresql"),
-            "/md/database/mysql/": set_sidebar("/md/database/mysql"),
             "/md/database/sqlite/": set_sidebar("/md/database/sqlite"),
             "/md/database/h2/": set_sidebar("/md/database/h2"),
             "/md/database/redis/": set_sidebar("/md/database/redis"),
@@ -231,9 +227,7 @@ export default defineConfig({
             "/md/mq/rabbitmq/": set_sidebar("/md/mq/rabbitmq"),
             "/md/mq/kafka/": set_sidebar("/md/mq/kafka"),
             "/md/mq/rocketmq/": set_sidebar("/md/mq/rocketmq"),
-            "/md/middleware/mycat/": set_sidebar("/md/middleware/mycat"),
-            "/md/middleware/shardingsphere/": set_sidebar("/md/middleware/shardingsphere"),
-            "/md/storage/minio/": set_sidebar("/md/storage/minio"),
+            "/md/middleware/ShardingSphere/": set_sidebar("/md/middleware/ShardingSphere"),
             "/md/storage/rustfs/": set_sidebar("/md/storage/rustfs"),
             // 架构与工程
             "/md/core/dsa/": set_sidebar("/md/core/dsa"),
