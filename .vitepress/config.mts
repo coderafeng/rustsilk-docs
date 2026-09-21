@@ -1,6 +1,6 @@
 import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
-import { getSidebar } from 'vitepress-plugin-auto-sidebar'
+// import { getSidebar } from 'vitepress-plugin-auto-sidebar'
 // import { generateBreadcrumbsData } from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -10,6 +10,9 @@ export default defineConfig({
     description: "A VitePress Site",
     // 域名，github仓库名
     base: "/rustsilk-docs",
+    sitemap: {
+        hostname: 'https://coderafeng.github.io/rustsilk-docs'
+    },
     // 面包屑导航
     /*transformPageData(pageData, context) {
         generateBreadcrumbsData(pageData, context)
@@ -18,6 +21,14 @@ export default defineConfig({
         lineNumbers: true, // 代码块全局显示行号
         math: true, // LaTeX 数学公式
         image: true, // 图片懒加载
+        container: {
+            noteLabel: '注意',
+            tipLabel: '提示',
+            warningLabel: '警告',
+            dangerLabel: '危险',
+            infoLabel: '信息',
+            detailsLabel: '详细信息'
+        }
     },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
@@ -72,9 +83,6 @@ export default defineConfig({
             linkLabel: '返回首页',
             linkText: '带我回去',
         },
-        // sitemap: {
-        //     hostname: 'https://coderafeng.github.io/rustsilk-docs'
-        // },
         nav: [
             {text: 'Home', link: '/'},
             {
