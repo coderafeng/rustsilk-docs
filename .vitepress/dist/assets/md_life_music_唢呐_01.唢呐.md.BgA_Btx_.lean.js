@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.C5lS51Lu.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"md/life/music/唢呐/01.唢呐.md","filePath":"md/life/music/唢呐/01.唢呐.md"}'),s={name:"md/life/music/唢呐/01.唢呐.md"};function c(r,o,i,m,n,_){return t(),a("div")}const p=e(s,[["render",c]]);export{f as __pageData,p as default};
