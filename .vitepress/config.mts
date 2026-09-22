@@ -199,6 +199,7 @@ export default defineConfig({
                     }
                 ]
             },
+            {text: '创业', link: '/md/entrepreneurship'},
             {
                 text: '生活',
                 items: [
@@ -254,6 +255,8 @@ export default defineConfig({
             "/md/architecture/distributed-microservice/": set_sidebar("/md/architecture/distributed-microservice"),
             "/md/architecture/business-design/": set_sidebar("/md/architecture/business-design"),
             "/md/manage/": set_sidebar("/md/manage"),
+            // 创业
+            "/md/entrepreneurship/": set_sidebar("/md/entrepreneurship"),
             // 生活
             "/md/life/finance/": set_sidebar("/md/life/finance"),
             "/md/life/gourmet-food/": set_sidebar("/md/life/gourmet-food"),
