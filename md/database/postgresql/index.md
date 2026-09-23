@@ -7,5 +7,6 @@ PostgreSQL 是一个开放源代码的、免费的、高性能的对象-关系�
 
 # 引用
 
-1. https://www.sjkjc.com/
-2. https://neon.com/postgresql/tutorial
+1. https://pgsql.cc/
+2. https://www.sjkjc.com/
+3. https://neon.com/postgresql/tutorial
