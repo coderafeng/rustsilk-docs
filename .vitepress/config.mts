@@ -1,5 +1,6 @@
 import {defineConfig} from 'vitepress'
 import {set_sidebar} from './utils/auto_sidebar'
+import markdownVideo from './utils/markdown-video.js'
 // import { getSidebar } from 'vitepress-plugin-auto-sidebar'
 // import { generateBreadcrumbsData } from '@nolebase/vitepress-plugin-breadcrumbs/vitepress'
 
@@ -21,6 +22,10 @@ export default defineConfig({
         lineNumbers: true, // 代码块全局显示行号
         math: true, // LaTeX 数学公式
         image: true, // 图片懒加载
+        // 注册本地视频嵌入插件：@[youtube|vimeo|bilibili|video|audio](id或链接)
+        config: (md) => {
+            md.use(markdownVideo)
+        },
         container: {
             noteLabel: '注意',
             tipLabel: '提示',
