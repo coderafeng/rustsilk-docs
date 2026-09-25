@@ -103,6 +103,10 @@ export default defineConfig({
                     {
                         text: 'Kotlin',
                         link: '/md/back-end/kotlin/'
+                    },
+                    {
+                        text: 'Lua',
+                        link: '/md/back-end/lua/'
                     }
                 ]
             },
@@ -222,6 +226,7 @@ export default defineConfig({
             "/md/back-end/rust/": set_sidebar("/md/back-end/rust"),
             "/md/back-end/python/": set_sidebar("/md/back-end/python"),
             "/md/back-end/kotlin/": set_sidebar("/md/back-end/kotlin"),
+            "/md/back-end/lua/": set_sidebar("/md/back-end/lua"),
             // 前端开发
             "/md/front-end/html_css_js_ts/": set_sidebar("/md/front-end/html_css_js_ts"),
             "/md/front-end/vue3/": set_sidebar("/md/front-end/vue3"),
