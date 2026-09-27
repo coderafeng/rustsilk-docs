@@ -87,3 +87,71 @@ html {
     max-width: 640px;
     margin: 0 auto;
 }
+
+/* ========== 文档图片全屏查看（theme/doc-image-viewer.ts） ========== */
+/* 正文图片包裹容器：右下角悬停浮现「全屏查看」图标 */
+.doc-img-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+}
+.doc-img-wrap > .doc-img-expand {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.doc-img-wrap:hover > .doc-img-expand {
+    opacity: 1;
+}
+.doc-img-wrap > .doc-img-expand:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* 全屏无限画布查看层：盖过导航栏（--vp-z-index-nav: 30） */
+.doc-img-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    touch-action: none;
+    background-color: rgba(14, 14, 17, 0.92);
+}
+.doc-img-viewer--open {
+    display: flex;
+}
+.doc-img-viewer > img {
+    max-width: 90%;
+    max-height: 90%;
+    transform-origin: center center;
+    user-select: none;
+    cursor: grab;
+    will-change: transform;
+}
+.doc-img-viewer--dragging {
+    cursor: grabbing;
+}
+.doc-img-viewer--dragging > img {
+    cursor: grabbing;
+}
+
+/* 查看期间锁定页面滚动，避免背景文章随滚轮翻动 */
+body.doc-img-locked {
+    overflow: hidden;
+}

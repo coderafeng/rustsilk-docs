@@ -2,8 +2,9 @@
 import { h, nextTick, watch } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 import { createMermaidRenderer } from 'vitepress-mermaid-renderer';
+import { enhanceDocImages, closeDocImageViewer } from './doc-image-viewer';
 import './style.css'
 import './custom.css'
 // import { NolebaseBreadcrumbs } from '@nolebase/vitepress-plugin-breadcrumbs/client'
@@ -37,6 +38,7 @@ export default {
   extends: DefaultTheme,
   Layout: () => {
     const { isDark, localeIndex } = useData();
+    const route = useRoute();
     
     const initMermaid = () => {
       const mermaidRenderer = createMermaidRenderer({
@@ -71,11 +73,24 @@ export default {
     };
     
     nextTick(() => initMermaid());
-    
+
+    // 正文图片注入右下角全屏查看图标（逻辑见 doc-image-viewer.ts）
+    nextTick(() => enhanceDocImages());
+
+    // 主题/语言切换：重建 mermaid 渲染器
     watch(
         () => [isDark.value, localeIndex.value] as const,
         () => {
           initMermaid();
+        },
+    );
+
+    // SPA 无刷新翻页：关闭可能残留的查看层，并重新扫描正文图片
+    watch(
+        () => route.path,
+        () => {
+          closeDocImageViewer();
+          nextTick(() => enhanceDocImages());
         },
     );
     
