@@ -39,3 +39,8 @@ Redis（REmote DIctionary Server）是一个开源的高性能内存键值数据
 
 > [!tip] 写作约定
 > 各章入口统一为 `000.xxx概述.md`，文档内部以 `# 概述` 作为首节标题供跨文档锚点引用；未完成文档保留「本文编写中」提示与写作骨架。
+
+# 引用
+
+1. https://redis.io/docs/latest/develop/
+2. https://redisgate.kr/redis/configuration/internal_key_hashtable.php
