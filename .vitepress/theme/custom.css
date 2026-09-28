@@ -120,6 +120,14 @@ html {
 .doc-img-wrap > .doc-img-expand:hover {
     background-color: rgba(0, 0, 0, 0.75);
 }
+/* 移动端 H5 无 hover：全屏图标常显，并加大触控目标 */
+@media (hover: none) {
+    .doc-img-wrap > .doc-img-expand {
+        opacity: 1;
+        width: 40px;
+        height: 34px;
+    }
+}
 
 /* 全屏无限画布查看层：盖过导航栏（--vp-z-index-nav: 30） */
 .doc-img-viewer {

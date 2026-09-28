@@ -29,6 +29,9 @@ let viewerImg: HTMLImageElement | null = null;
 const state: ViewerState = { scale: 1, x: 0, y: 0 };
 let dragging = false;
 let lastPointer = { x: 0, y: 0 };
+// 活跃指针表：1 指/鼠标单键 = 拖动平移，2 指 = 捏合缩放（移动端无 wheel 事件）
+const pointers = new Map<number, { x: number; y: number }>();
+let pinch: { dist: number; scale: number; midX: number; midY: number } | null = null;
 
 function clamp(v: number, min: number, max: number): number {
     return Math.min(Math.max(v, min), max);
@@ -50,7 +53,7 @@ function onKeydown(e: KeyboardEvent) {
     }
 }
 
-/** 懒创建单例查看层，并绑定滚轮/拖动/双击交互 */
+/** 懒创建单例查看层，并绑定滚轮/拖动/捏合/双击交互 */
 function ensureOverlay() {
     if (overlay !== null) return;
 
@@ -75,27 +78,67 @@ function ensureOverlay() {
         applyTransform();
     }, { passive: false });
 
-    // 按住拖动平移（放大后查看局部）
+    // 拖动平移（单指针）+ 捏合缩放（双指针，以捏合中点为不动点并跟随中点移动）
     overlay.addEventListener('pointerdown', e => {
-        if (e.button !== 0) return;
-        dragging = true;
-        lastPointer = { x: e.clientX, y: e.clientY };
-        overlay!.classList.add('doc-img-viewer--dragging');
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
         overlay!.setPointerCapture(e.pointerId);
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (pointers.size === 2) {
+            const [p1, p2] = [...pointers.values()];
+            pinch = {
+                dist: Math.hypot(p2.x - p1.x, p2.y - p1.y) || 1,
+                scale: state.scale,
+                midX: (p1.x + p2.x) / 2,
+                midY: (p1.y + p2.y) / 2,
+            };
+        } else if (pointers.size === 1) {
+            dragging = true;
+            lastPointer = { x: e.clientX, y: e.clientY };
+            overlay!.classList.add('doc-img-viewer--dragging');
+        }
     });
     overlay.addEventListener('pointermove', e => {
-        if (!dragging) return;
-        state.x += e.clientX - lastPointer.x;
-        state.y += e.clientY - lastPointer.y;
-        lastPointer = { x: e.clientX, y: e.clientY };
-        applyTransform();
+        if (!pointers.has(e.pointerId)) return;
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (pinch !== null && pointers.size >= 2) {
+            const [p1, p2] = [...pointers.values()];
+            const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y) || 1;
+            const prev = state.scale;
+            const next = clamp(pinch.scale * (dist / pinch.dist), MIN_SCALE, MAX_SCALE);
+            const k = next / prev;
+            const ox = window.innerWidth / 2;
+            const oy = window.innerHeight / 2;
+            const cx = (p1.x + p2.x) / 2;
+            const cy = (p1.y + p2.y) / 2;
+            // 两步合成：绕当前中点缩放 k 倍，再叠加中点位移（缩放+平移同步跟手）
+            state.x = cx - ox - (cx - ox - state.x) * k + (cx - pinch.midX);
+            state.y = cy - oy - (cy - oy - state.y) * k + (cy - pinch.midY);
+            state.scale = next;
+            pinch.midX = cx;
+            pinch.midY = cy;
+            applyTransform();
+        } else if (dragging) {
+            state.x += e.clientX - lastPointer.x;
+            state.y += e.clientY - lastPointer.y;
+            lastPointer = { x: e.clientX, y: e.clientY };
+            applyTransform();
+        }
     });
-    const endDrag = () => {
-        dragging = false;
-        overlay?.classList.remove('doc-img-viewer--dragging');
+    const endPointer = (e: PointerEvent) => {
+        pointers.delete(e.pointerId);
+        if (pointers.size < 2) pinch = null;
+        if (pointers.size === 0) {
+            dragging = false;
+            overlay?.classList.remove('doc-img-viewer--dragging');
+        } else if (pointers.size === 1) {
+            // 捏合后剩单指：从该指当前位置继续平移，避免跳变
+            const [p] = [...pointers.values()];
+            lastPointer = { x: p.x, y: p.y };
+            dragging = true;
+        }
     };
-    overlay.addEventListener('pointerup', endDrag);
-    overlay.addEventListener('pointercancel', endDrag);
+    overlay.addEventListener('pointerup', endPointer);
+    overlay.addEventListener('pointercancel', endPointer);
 
     // 双击退出
     overlay.addEventListener('dblclick', closeViewer);
