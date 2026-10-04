@@ -178,7 +178,8 @@ export default defineConfig({
                 text: 'GUI',
                 items: [
                     { text: 'JavaFX', link: '/md/gui/javafx' },
-                    { text: 'GPUI Kit', link: '/md/gui/gpui-kit' }
+                    { text: 'GPUI Kit', link: '/md/gui/gpui-kit' },
+                    { text: 'rust-widgets', link: '/md/gui/rust-widgets' }
                 ]
             },
             {
@@ -274,6 +275,7 @@ export default defineConfig({
             // GUI
             "/md/gui/javafx/": set_sidebar("/md/gui/javafx"),
             "/md/gui/gpui-kit/": set_sidebar("/md/gui/gpui-kit"),
+            "/md/gui/rust-widgets/": set_sidebar("/md/gui/rust-widgets"),
             // 架构与工程
             "/md/core/dsa/": set_sidebar("/md/core/dsa"),
             "/md/core/design-patterns/": set_sidebar("/md/core/design-patterns"),
