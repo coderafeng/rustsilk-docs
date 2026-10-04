@@ -165,6 +165,23 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'Spring',
+                items: [
+                    { text: 'Spring Framework', link: '/md/spring/spring-framework' },
+                    { text: 'Spring Boot', link: '/md/spring/spring-boot' },
+                    { text: 'Spring Security', link: '/md/spring/spring-security' },
+                    { text: 'Spring AI', link: '/md/spring/spring-ai' },
+                    { text: 'Spring Cloud', link: '/md/spring/spring-cloud' }
+                ]
+            },
+            {
+                text: 'GUI',
+                items: [
+                    { text: 'JavaFX', link: '/md/gui/javafx' },
+                    { text: 'GPUI Kit', link: '/md/gui/gpui-kit' }
+                ]
+            },
+            {
                 text: '架构与工程',
                 items: [
                     {
@@ -208,19 +225,19 @@ export default defineConfig({
                     }
                 ]
             },
-            {text: '创业', link: '/md/entrepreneurship'},
             {
-                text: '生活',
+                text: '其它',
                 items: [
-                    {text: "财经", link: '/md/life/finance'},
-                    {text: "美食", link: '/md/life/gourmet-food'},
+                    {text: "财经", link: '/md/other/finance'},
+                    {text: "美食", link: '/md/other/gourmet-food'},
                     {text: "旅游", link: '/md/life/travel'},
-                    {text: "摄影", link: '/md/life/photography'},
-                    {text: "音乐", link: '/md/life/music'},
-                    {text: "影视", link: '/md/life/movie'},
-                    {text: "DIY", link: '/md/life/diy'},
-                    {text: "养生", link: '/md/life/health-preservation'},
-                    {text: "其它", link: '/md/life/other'},
+                    {text: "摄影", link: '/md/other/photography'},
+                    {text: "音乐", link: '/md/other/music'},
+                    {text: "影视", link: '/md/other/movie'},
+                    {text: "DIY", link: '/md/other/diy'},
+                    {text: "养生", link: '/md/other/health-preservation'},
+                    {text: "3D", link: '/md/other/3D'},
+                    {text: '创业', link: '/md/other/entrepreneurship'}
                 ]
             },
             {text: '关于', link: '/md/about'},
@@ -247,7 +264,16 @@ export default defineConfig({
             "/md/mq/kafka/": set_sidebar("/md/mq/kafka"),
             "/md/mq/rocketmq/": set_sidebar("/md/mq/rocketmq"),
             "/md/middleware/ShardingSphere/": set_sidebar("/md/middleware/ShardingSphere"),
-            "/md/storage/rustfs/": set_sidebar("/md/storage/rustfs"),
+            "/md/storage/rustfs/": set_sidebar("/md/storagei/rustfs"),
+            // Spring
+            "/md/spring/spring-framework/": set_sidebar("/md/spring/spring-framework"),
+            "/md/spring/spring-boot/": set_sidebar("/md/spring/spring-boot"),
+            "/md/spring/spring-security/": set_sidebar("/md/spring/spring-security"),
+            "/md/spring/spring-ai/": set_sidebar("/md/spring/spring-ai"),
+            "/md/spring/spring-cloud/": set_sidebar("/md/spring/spring-cloud"),
+            // GUI
+            "/md/gui/javafx/": set_sidebar("/md/gui/javafx"),
+            "/md/gui/gpui-kit/": set_sidebar("/md/gui/gpui-kit"),
             // 架构与工程
             "/md/core/dsa/": set_sidebar("/md/core/dsa"),
             "/md/core/design-patterns/": set_sidebar("/md/core/design-patterns"),
@@ -265,18 +291,19 @@ export default defineConfig({
             "/md/architecture/distributed-microservice/": set_sidebar("/md/architecture/distributed-microservice"),
             "/md/architecture/business-design/": set_sidebar("/md/architecture/business-design"),
             "/md/manage/": set_sidebar("/md/manage"),
-            // 创业
-            "/md/entrepreneurship/": set_sidebar("/md/entrepreneurship"),
-            // 生活
-            "/md/life/finance/": set_sidebar("/md/life/finance"),
-            "/md/life/gourmet-food/": set_sidebar("/md/life/gourmet-food"),
-            "/md/life/travel": set_sidebar("/md/life/travel"),
-            "/md/life/photography/": set_sidebar("/md/life/photography"),
-            "/md/life/music/": set_sidebar("/md/life/music"),
-            "/md/life/movie/": set_sidebar("/md/life/movie"),
-            "/md/life/diy/": set_sidebar("/md/life/diy"),
-            "/md/life/health-preservation/": set_sidebar("/md/life/health-preservation"),
-            "/md/life/other/": set_sidebar("/md/life/other"),
+            // 其它
+            "/md/other/finance/": set_sidebar("/md/other/finance"),
+            "/md/other/gourmet-food/": set_sidebar("/md/other/gourmet-food"),
+            "/md/other/travel": set_sidebar("/md/other/travel"),
+            "/md/other/photography/": set_sidebar("/md/other/photography"),
+            "/md/other/music/": set_sidebar("/md/other/music"),
+            "/md/other/movie/": set_sidebar("/md/other/movie"),
+            "/md/other/diy/": set_sidebar("/md/other/diy"),
+            "/md/other/health-preservation/": set_sidebar("/md/other/health-preservation"),
+            "/md/other/3D/": set_sidebar("/md/other/3D"),
+            "/md/other/entrepreneurship/": set_sidebar("/md/other/entrepreneurship"),
+            // 关于
+            "/md/about/": set_sidebar("/md/about")
         },
         socialLinks: [
             {icon: 'github', link: 'https://github.com/coderafeng/rustsilk-docs'},
