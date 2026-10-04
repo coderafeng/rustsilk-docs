@@ -231,7 +231,7 @@ export default defineConfig({
                 items: [
                     {text: "财经", link: '/md/other/finance'},
                     {text: "美食", link: '/md/other/gourmet-food'},
-                    {text: "旅游", link: '/md/life/travel'},
+                    {text: "旅游", link: '/md/other/travel'},
                     {text: "摄影", link: '/md/other/photography'},
                     {text: "音乐", link: '/md/other/music'},
                     {text: "影视", link: '/md/other/movie'},
