@@ -18,11 +18,11 @@ hero:
 #      link: /api-examples
 
 features:
-  - title: Feature A
+  - title: 特色 A
     details: 快速入门
-  - title: Feature B
+  - title: 特色 B
     details: 实践指南
-  - title: Feature C
-    details: 知识全面
+  - title: 特色 C
+    details: 领域全面
 ---
 
