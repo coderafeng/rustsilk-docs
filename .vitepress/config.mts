@@ -170,7 +170,6 @@ export default defineConfig({
                     { text: 'Spring Framework', link: '/md/spring/spring-framework' },
                     { text: 'Spring Boot', link: '/md/spring/spring-boot' },
                     { text: 'Spring Security', link: '/md/spring/spring-security' },
-                    { text: 'Spring AI', link: '/md/spring/spring-ai' },
                     { text: 'Spring Cloud', link: '/md/spring/spring-cloud' }
                 ]
             },
@@ -180,6 +179,22 @@ export default defineConfig({
                     { text: 'JavaFX', link: '/md/gui/javafx' },
                     { text: 'GPUI Kit', link: '/md/gui/gpui-kit' },
                     { text: 'rust-widgets', link: '/md/gui/rust-widgets' }
+                ]
+            },
+            {
+                text: 'AI',
+                items: [
+                    { text: '导航与路线', link: '/md/ai/navigation_and_routes' },
+                    { text: 'AI应用基础', link: '/md/ai/fundamentals_of_ai_applications' },
+                    { text: 'Java_AI技术栈', link: '/md/ai/java_ai_technology_stack' },
+                    { text: 'Python_AI技术栈', link: '/md/ai/python_ai_technology_stack' },
+                    { text: '扩展与集成', link: '/md/ai/expansion_and_integration' },
+                    { text: 'RAG与知识库', link: '/md/ai/rag_and_knowledge_base' },
+                    { text: 'Agent与自动化', link: '/md/ai/agent_and_automation' },
+                    { text: '全栈AI工程', link: '/md/ai/full_stack_ai_engineering' },
+                    { text: '综合项目实战', link: '/md/ai/comprehensive_project_practice' },
+                    { text: '模型与原理', link: '/md/ai/model_and_principle' },
+                    { text: '资源与社区', link: '/md/ai/resources_and_communities' },
                 ]
             },
             {
@@ -270,12 +285,23 @@ export default defineConfig({
             "/md/spring/spring-framework/": set_sidebar("/md/spring/spring-framework"),
             "/md/spring/spring-boot/": set_sidebar("/md/spring/spring-boot"),
             "/md/spring/spring-security/": set_sidebar("/md/spring/spring-security"),
-            "/md/spring/spring-ai/": set_sidebar("/md/spring/spring-ai"),
             "/md/spring/spring-cloud/": set_sidebar("/md/spring/spring-cloud"),
             // GUI
             "/md/gui/javafx/": set_sidebar("/md/gui/javafx"),
             "/md/gui/gpui-kit/": set_sidebar("/md/gui/gpui-kit"),
             "/md/gui/rust-widgets/": set_sidebar("/md/gui/rust-widgets"),
+            // AI
+            "/md/ai/navigation_and_routes/": set_sidebar("/md/ai/navigation_and_routes"),
+            "/md/ai/fundamentals_of_ai_applications/": set_sidebar("/md/ai/fundamentals_of_ai_applications"),
+            "/md/ai/java_ai_technology_stack/": set_sidebar("/md/ai/java_ai_technology_stack"),
+            "/md/ai/python_ai_technology_stack/": set_sidebar("/md/ai/python_ai_technology_stack"),
+            "/md/ai/expansion_and_integration/": set_sidebar("/md/ai/expansion_and_integration"),
+            "/md/ai/rag_and_knowledge_base/": set_sidebar("/md/ai/rag_and_knowledge_base"),
+            "/md/ai/agent_and_automation/": set_sidebar("/md/ai/agent_and_automation"),
+            "/md/ai/full_stack_ai_engineering/": set_sidebar("/md/ai/full_stack_ai_engineering"),
+            "/md/ai/comprehensive_project_practice/": set_sidebar("/md/ai/comprehensive_project_practice"),
+            "/md/ai/model_and_principle/": set_sidebar("/md/ai/model_and_principle"),
+            "/md/ai/resources_and_communities/": set_sidebar("/md/ai/resources_and_communities"),
             // 架构与工程
             "/md/core/dsa/": set_sidebar("/md/core/dsa"),
             "/md/core/design-patterns/": set_sidebar("/md/core/design-patterns"),
