@@ -280,7 +280,7 @@ export default defineConfig({
             "/md/mq/kafka/": set_sidebar("/md/mq/kafka"),
             "/md/mq/rocketmq/": set_sidebar("/md/mq/rocketmq"),
             "/md/middleware/ShardingSphere/": set_sidebar("/md/middleware/ShardingSphere"),
-            "/md/storage/rustfs/": set_sidebar("/md/storagei/rustfs"),
+            "/md/storage/rustfs/": set_sidebar("/md/storage/rustfs"),
             // Spring
             "/md/spring/spring-framework/": set_sidebar("/md/spring/spring-framework"),
             "/md/spring/spring-boot/": set_sidebar("/md/spring/spring-boot"),
