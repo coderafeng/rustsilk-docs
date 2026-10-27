@@ -216,7 +216,13 @@ export default defineConfig({
                             { text: 'Docker', link: '/md/tools/docker' },
                             { text: 'Kubernetes', link: '/md/tools/k8s' },
                             { text: 'Gitea/GitLab', link: '/md/tools/git-platform' },
-                            { text: 'Jpom', link: '/md/tools/jpom' }
+                            { text: 'Jpom', link: '/md/tools/jpom' },
+                            { text: 'IntelliJ IDEA', link: '/md/tools/IDEA'},
+                            { text: 'IntelliJ WebStorm', link: '/md/tools/WebStorm'},
+                            { text: 'IntelliJ CLion', link: '/md/tools/CLion'},
+                            { text: 'IntelliJ PyCharm', link: '/md/tools/PyCharm'},
+                            { text: 'IntelliJ RustRover', link: '/md/tools/RustRover'},
+                            { text: 'Zed', link: '/md/tools/Zed'},
                         ]
                     },
                     {
@@ -312,6 +318,12 @@ export default defineConfig({
             "/md/tools/k8s/": set_sidebar("/md/tools/k8s"),
             "/md/tools/git-platform/": set_sidebar("/md/tools/git-platform"),
             "/md/tools/jpom/": set_sidebar("/md/tools/jpom"),
+            "/md/tools/IDEA/": set_sidebar("/md/tools/IDEA"),
+            "/md/tools/WebStorm/": set_sidebar("/md/tools/WebStorm"),
+            "/md/tools/CLion/": set_sidebar("/md/tools/CLion"),
+            "/md/tools/PyCharm/": set_sidebar("/md/tools/PyCharm"),
+            "/md/tools/RustRover/": set_sidebar("/md/tools/RustRover"),
+            "/md/tools/Zed/": set_sidebar("/md/tools/Zed"),
             "/md/engineering/process/": set_sidebar("/md/engineering/process"),
             "/md/engineering/open-source-license/": set_sidebar("/md/engineering/open-source-license"),
             "/md/engineering/theory/": set_sidebar("/md/engineering/theory"),
