@@ -9,9 +9,11 @@ const WHITE_LIST = [
     "assets",
 ];
 
+// 判断条目是否应被忽略：白名单目录，或图片资源目录（如 redis.assets、Zed.assets）
+const isIgnored = (name) => WHITE_LIST.includes(name) || name.endsWith(".assets");
+
 const isDirectory = (path) => fs.lstatSync(path).isDirectory();
-const intersections = (arr1, arr2) =>
-    Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));
+const filter_ignored = (files) => files.filter((name) => !isIgnored(name));
 
 // 提取数字前缀
 const getOrderFromName = (name, isIndex = false) => {
@@ -71,7 +73,7 @@ function getList(params, path1, pathname) {
         if (isDir) {
             // 读取文件夹内的内容
             const files = fs.readdirSync(dir);
-            const filteredFiles = intersections(files, WHITE_LIST);
+            const filteredFiles = filter_ignored(files);
             
             // 检查文件夹内是否有 index.md
             const hasIndex = filteredFiles.some(f => isIndexFile(f));
@@ -108,6 +110,6 @@ export const set_sidebar = (pathname) => {
     }
     
     const files = fs.readdirSync(dirPath);
-    const items = intersections(files, WHITE_LIST);
+    const items = filter_ignored(files);
     return getList(items, dirPath, pathname);
 };

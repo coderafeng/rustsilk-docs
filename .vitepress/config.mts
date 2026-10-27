@@ -11,6 +11,8 @@ export default defineConfig({
     description: "A VitePress Site",
     // 域名，github仓库名
     base: "/rustsilk-docs",
+    // 排除图片资源目录（如 redis.assets、Zed.assets），避免其中文件被当作页面渲染
+    srcExclude: ['**/*.assets/**'],
     sitemap: {
         hostname: 'https://coderafeng.github.io/rustsilk-docs'
     },
